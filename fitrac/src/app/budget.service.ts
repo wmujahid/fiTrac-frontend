@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Budget } from './budget'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BudgetService {
-  private apiServerUrl: string = ''
+  private apiServerUrl: string = environment.apiBaseUrl
 
   constructor(private http: HttpClient) { }
 
