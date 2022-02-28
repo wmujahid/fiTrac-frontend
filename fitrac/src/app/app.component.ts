@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BudgetService } from './budget.service';
+import { Budget } from './budget';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fitrac';
+  budgets: Budget[] = [];
+
+  constructor(private budgetService: BudgetService) { }
 }
