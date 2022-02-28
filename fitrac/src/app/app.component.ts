@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getAllBudgets()
   }
+
   getAllBudgets(): void {
     this.budgetService.getAllBudgets().subscribe(
       (response: Budget[]) => {
@@ -23,7 +24,9 @@ export class AppComponent implements OnInit {
       },
       (err: HttpErrorResponse) => {
         alert(err.message)
+        console.log(this.budgets);
+
       }
     )
-  }
+  };
 }
