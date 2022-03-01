@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { isNull } from '@angular/compiler/src/output/output_ast';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { BudgetItem } from 'src/shared/models/budget-item.model';
 
 @Component({
   selector: 'app-add-item-form',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemFormComponent implements OnInit {
 
+  @Input() item: BudgetItem = new BudgetItem('',0);
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form)
   }
 
 }
