@@ -5,8 +5,8 @@ angular frontend for financial tracking application
 My goal here is to create a financial tracking and budgeting application.
 
 
-## My Entity Relationship Diagram (ERD):
-![](./Screen Shot 2022-03-02 at 3.22.03 PM.png)
+## fitrac UI:
+![](./fitracScreenshot.png)
 
 ## User Stories
 - As a user, I should be able to create a income or multiple incomes
