@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { BudgetService } from './budget.service';
 import { Budget } from './budget';
 import { HttpErrorResponse } from '@angular/common/http';
+=======
+import { Component } from '@angular/core';
+import { BudgetService } from './budget.service';
+import { Budget } from './budget';
+>>>>>>> f0e1a98 (added budget observables to budget service)
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+<<<<<<< HEAD
 export class AppComponent implements OnInit {
   budgets: Budget[] = [];
 
@@ -30,4 +37,10 @@ export class AppComponent implements OnInit {
       }
     )
   };
+=======
+export class AppComponent {
+  budgets: Budget[] = [];
+
+  constructor(private budgetService: BudgetService) { }
+>>>>>>> f0e1a98 (added budget observables to budget service)
 }
