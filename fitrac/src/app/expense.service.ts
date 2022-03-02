@@ -13,22 +13,22 @@ export class ExpenseService {
   constructor(private http: HttpClient) { }
 
   public getAllExpenses(): Observable<Expense[]>{
-    return this.http.get<Expense[]>(`${this.apiServerUrl}/expense/all`)
+    return this.http.get<Expense[]>(`${this.apiServerUrl}/budget/expense/all`)
   }
 
   public getExpenseById(expense: Expense): Observable<Expense>{
-    return this.http.get<Expense>(`${this.apiServerUrl}/expense/{id}`)
+    return this.http.get<Expense>(`${this.apiServerUrl}/budget/expense/{id}`)
   }
 
   public createExpense(expense: Expense): Observable<Expense>{
-    return this.http.post<Expense>(`${this.apiServerUrl}/expense/create`, expense)
+    return this.http.post<Expense>(`${this.apiServerUrl}/budget/expense/create`, expense)
   }
 
   public updateExpense(expense: Expense): Observable<Expense>{
-    return this.http.put<Expense>(`${this.apiServerUrl}/expense/update`, expense)
+    return this.http.put<Expense>(`${this.apiServerUrl}/budget/expense/update`, expense)
   }
 
   public deleteExpense(expenseId: Expense): Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/expense/delete/${expenseId}`)
+    return this.http.delete<void>(`${this.apiServerUrl}/budget/expense/delete/${expenseId}`)
   }
 }
