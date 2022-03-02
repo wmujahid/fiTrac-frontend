@@ -4,6 +4,8 @@ angular frontend for financial tracking application
 ## General Approach: 
 My goal here is to create a financial tracking and budgeting application.
 
+## fitrac ERD:
+![](./fitrac.png)
 
 ## fitrac UI:
 ![](./fitracScreenshot.png)
