@@ -33,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule
   ],
   providers: [BudgetService],
+  entryComponents:[EditItemModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
