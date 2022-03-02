@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BudgetItem } from 'src/shared/models/budget-item.model';
 import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { IncomeService } from '../income.service';
 
 @Component({
   selector: 'app-budget-item-list',
@@ -17,7 +18,7 @@ export class BudgetItemListComponent implements OnInit {
 
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public incomeService: IncomeService) { }
 
   ngOnInit(): void {
   }

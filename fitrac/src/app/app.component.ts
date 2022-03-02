@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BudgetService } from './budget.service';
 import { Budget } from './budget';
-import { Income } from './income';
-import { Expense } from './expense';
 import { HttpErrorResponse } from '@angular/common/http';
-import { IncomeService } from './income.service';
-import { ExpenseService } from './expense.service';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +11,8 @@ import { ExpenseService } from './expense.service';
 export class AppComponent implements OnInit {
   budgets: Budget[] = [];
 
-  incomes: Income[];
-  expenses: Expense[];
 
-
-  constructor(
-    private budgetService: BudgetService,
-    private incomeService: IncomeService,
-    private expenseService: ExpenseService) { }
+  constructor(private budgetService: BudgetService) { }
 
   ngOnInit(): void {
     this.getAllBudgets()

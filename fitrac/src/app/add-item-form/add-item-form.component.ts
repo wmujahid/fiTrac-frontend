@@ -16,6 +16,10 @@ export class AddItemFormComponent implements OnInit {
   @Input() item: BudgetItem;
   @Output() formSubmit: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
 
+  incomes: Income[];
+  expenses: Expense[];
+
+
   isNewItem: boolean;
 
   constructor(
@@ -23,6 +27,8 @@ export class AddItemFormComponent implements OnInit {
     private expenseService: ExpenseService) { }
 
   ngOnInit() {
+    this.getAllIncomes();
+    this.getAllExpenses();
     // if item has a value
     if (this.item) {
       // this means that an existing item object was passed into this component
@@ -32,6 +38,7 @@ export class AddItemFormComponent implements OnInit {
       this.isNewItem = true;
       this.item = new BudgetItem('', 0);
     }
+
   }
 
   onSubmit(form: NgForm) {
@@ -41,6 +48,7 @@ export class AddItemFormComponent implements OnInit {
       })
       this.formSubmit.emit(form.value);
       form.reset();
+
     } else {
       this.expenseService.createExpense(form.value).subscribe((response) => {
         console.log(response)
@@ -52,4 +60,33 @@ export class AddItemFormComponent implements OnInit {
 
   }
 
+  getAllIncomes() {
+    this.incomeService.getAllIncomes().subscribe(
+      (response: Income[]) => {
+        this.incomes = response
+      },
+      (err: HttpErrorResponse) => {
+        alert(err.message)
+        console.log(this.incomes);
+
+      }
+    )
+  };
+
+  getAllExpenses() {
+    this.expenseService.getAllExpenses().subscribe(
+      (response: Expense[]) => {
+        this.expenses = response
+      },
+      (err: HttpErrorResponse) => {
+        alert(err.message)
+        console.log(this.expenses);
+
+      }
+    )
+  };
+
+  deleteExpense(expense: Expense) {
+    
+  }
 }
