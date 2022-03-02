@@ -6,7 +6,7 @@ My goal here is to create a financial tracking and budgeting application.
 
 
 ## My Entity Relationship Diagram (ERD):
-![](./UltimateTeam.png)
+![](./Screen Shot 2022-03-02 at 3.22.03 PM.png)
 
 ## User Stories
 - As a user, I should be able to create a income or multiple incomes
